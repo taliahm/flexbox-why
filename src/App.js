@@ -1,24 +1,39 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import "./App.css";
+
+import NavParentQuestion from "./components/NavParentQuestion";
+import HeaderParentQuestion from "./components/HeaderParentQuestion";
+import MainParentQuestion from "./components/MainParentQuestion";
+import SectionParentQuestion from "./components/SectionParentQuestion";
+
+import NavStyleQuestion from "./components/NavStyleQuestion";
+import BaselineQuestion from "./components/BaselineQuestion";
 
 function App() {
+  const [currentQuestion, setCurrentQuestion] = useState(0);
+  const handleNextQuestion = () => {
+    setCurrentQuestion(currentQuestion + 1);
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      {currentQuestion === 0 && (
+        <BaselineQuestion nextQuestion={handleNextQuestion} />
+      )}
+      {currentQuestion === 5 && (
+        <NavStyleQuestion nextQuestion={handleNextQuestion} />
+      )}
+      {currentQuestion === 4 && (
+        <SectionParentQuestion nextQuestion={handleNextQuestion} />
+      )}
+      {currentQuestion === 3 && (
+        <MainParentQuestion nextQuestion={handleNextQuestion} />
+      )}
+      {currentQuestion === 1 && (
+        <NavParentQuestion nextQuestion={handleNextQuestion} />
+      )}
+      {currentQuestion === 2 && (
+        <HeaderParentQuestion nextQuestion={handleNextQuestion} />
+      )}
     </div>
   );
 }
