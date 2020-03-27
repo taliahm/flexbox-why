@@ -21,25 +21,25 @@ function App() {
         <h1>Flexbox Design</h1>
         <p>Use your knowledge of flexbox to recreate designs! Each question will require you to add some CSS (either CSS selectors or rules) in order to recreate a design.</p>
       </div>
-      {currentQuestion === 0 && (
+      {currentQuestion === 6 && (
         <FlexWrapQuestion nextQuestion={handleNextQuestion} />
       )}
-      {currentQuestion === 6 && (
+      {currentQuestion === 5 && (
         <BaselineQuestion nextQuestion={handleNextQuestion} />
       )}
-      {currentQuestion === 5 && (
+      {currentQuestion === 4 && (
         <NavStyleQuestion nextQuestion={handleNextQuestion} />
       )}
-      {currentQuestion === 3 && (
+      {currentQuestion === 2 && (
         <SectionParentQuestion nextQuestion={handleNextQuestion} />
       )}
-      {currentQuestion === 2 && (
+      {currentQuestion === 1 && (
         <MainParentQuestion nextQuestion={handleNextQuestion} />
       )}
-      {currentQuestion === 4 && (
+      {currentQuestion === 3 && (
         <NavParentQuestion nextQuestion={handleNextQuestion} />
       )}
-      {currentQuestion === 1 && (
+      {currentQuestion === 0 && (
         <HeaderParentQuestion nextQuestion={handleNextQuestion} />
       )}
     </div>
