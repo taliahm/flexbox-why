@@ -2,84 +2,99 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import Highlight from "react-highlight.js";
 
-import Question from "./Question";
+import bookshelf from "./assets/bookshelf.png";
+import book from "./assets/book.png";
+
+import QuestionTextarea from "./QuestionTextarea";
+import { WebsiteBox } from "./styled";
+
+const H3 = styled.h3`
+  margin: 40px 0 0 0;
+`;
 
 const BaseDiv = styled.div`
+.box {
+    display: flex;
+    width: 100%;
+}
+  .holdImage {
+    width: 15%;
+  }
+  img {
+    max-width: 100%;
+    display: block;
+  }
   p {
-    font-size: 20px;
-  }
-  span {
-    font-size: 30px;
-  }
-  ul {
-      list-style: none;
+    font-size: 40px;
+    margin: 0;
   }
 `;
 
 const StyledDiv = styled(BaseDiv)`
-  ul {
-    display: flex;
+.box {
     ${props => props.styles}
-  }
+}
 `;
 
 const StyledAnswerDiv = styled(BaseDiv)`
-  ul {
-    display: flex;
+.box {
     justify-content: flex-start;
-    align-items: baseline;
-  }
+    align-items: center;
+}
 `;
 
 export default function BaselineQuestion(props) {
   const [input, setInput] = useState("");
-  const answer = "ul";
+  const answers = ["align-items:", "center"];
+  const checkEnabled = () => {
+    const included = answers.filter(answer => {
+      return input.includes(answer);
+    });
+    console.log(included);
+    return included.length === answers.length;
+  };
   return (
     <div className="wrapper">
       <section className="codeArea">
-        {/* <Question 
-          questionText="For the following HTML, to what element would you add display: flex?"
-          hasWon={input.toLowerCase() === answer}
-          input={input}
-          handleChange={(e) => setInput(e.target.value)}
-          nextQuestion={props.nextQuestion}
-          /> */}
-        display: flex;
-        <textarea
-          value={input}
+        <QuestionTextarea
           onChange={e => setInput(e.target.value)}
-        ></textarea>
+          disabled={checkEnabled()}
+          nextQuestion={props.nextQuestion}
+        />
         <div>
           <Highlight language="html">
             {`
-            <div><p>We create <button>the best</button>products</p></div>
+            <section>
+                <div>
+                    <img src={book} />
+                </div>
+                <p>Books! Books! Books!</p>
+            </section>
             `}
           </Highlight>
         </div>
       </section>
       <section className="playingArea">
-        <StyledAnswerDiv className="answer">
-        <div>
-            <ul>
-              <li>one</li>
-              <li>two</li>
-              <li>
-                <span>three</span>
-              </li>
-            </ul>
-          </div>
-        </StyledAnswerDiv>
-        <StyledDiv className="inputArea" styles={input}>
-          <div>
-            <ul>
-              <li>one</li>
-              <li>two</li>
-              <li>
-                <span>three</span>
-              </li>
-            </ul>
-          </div>
+      <StyledDiv className="inputArea" styles={input}>
+      <H3>Make this design:</H3>
+
+          <WebsiteBox className="box">
+            <div className="holdImage">
+              <img src={book} />
+            </div>
+            <p>Books! Books! Books!</p>
+          </WebsiteBox>
         </StyledDiv>
+      <H3>Look like this design:</H3>
+        <StyledAnswerDiv className="answer">
+          <WebsiteBox className="box">
+            <div className="holdImage">
+              <img src={book} />
+            </div>
+            <p>Books! Books! Books!</p>
+          </WebsiteBox>
+        </StyledAnswerDiv>
+
       </section>
     </div>
   );

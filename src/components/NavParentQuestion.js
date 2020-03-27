@@ -77,16 +77,19 @@ export default function NavParentQuestion(props) {
           <nav>
             <ul>
               <li>
+              {/*eslint-disable-next-line*/}
                 <a href="#" disabled>
                   Home
                 </a>
               </li>
               <li>
+                 {/*eslint-disable-next-line*/}
                 <a href="#" disabled>
                   About
                 </a>
               </li>
               <li>
+                 {/*eslint-disable-next-line*/}
                 <a href="#" disabled>
                   Blog
                 </a>
@@ -98,12 +101,15 @@ export default function NavParentQuestion(props) {
           <nav>
             <ul>
               <li>
+                 {/*eslint-disable-next-line*/}
                 <a href="#">Home</a>
               </li>
               <li>
+                 {/*eslint-disable-next-line*/}
                 <a href="#">About</a>
               </li>
               <li>
+                 {/*eslint-disable-next-line*/}
                 <a href="#">Blog</a>
               </li>
             </ul>
