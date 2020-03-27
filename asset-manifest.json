@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/flexbox-why/static/css/main.c0976196.chunk.css",
+    "main.js": "/flexbox-why/static/js/main.08118460.chunk.js",
+    "main.js.map": "/flexbox-why/static/js/main.08118460.chunk.js.map",
+    "runtime-main.js": "/flexbox-why/static/js/runtime-main.9d657fd7.js",
+    "runtime-main.js.map": "/flexbox-why/static/js/runtime-main.9d657fd7.js.map",
+    "static/js/2.0fe37770.chunk.js": "/flexbox-why/static/js/2.0fe37770.chunk.js",
+    "static/js/2.0fe37770.chunk.js.map": "/flexbox-why/static/js/2.0fe37770.chunk.js.map",
+    "index.html": "/flexbox-why/index.html",
+    "precache-manifest.5b7bf7ef9bed0402e7256736f593807b.js": "/flexbox-why/precache-manifest.5b7bf7ef9bed0402e7256736f593807b.js",
+    "service-worker.js": "/flexbox-why/service-worker.js",
+    "static/css/main.c0976196.chunk.css.map": "/flexbox-why/static/css/main.c0976196.chunk.css.map",
+    "static/js/2.0fe37770.chunk.js.LICENSE.txt": "/flexbox-why/static/js/2.0fe37770.chunk.js.LICENSE.txt",
+    "static/media/book.png": "/flexbox-why/static/media/book.9554bbad.png",
+    "static/media/bookshelf.png": "/flexbox-why/static/media/bookshelf.eb49a30f.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.9d657fd7.js",
+    "static/js/2.0fe37770.chunk.js",
+    "static/css/main.c0976196.chunk.css",
+    "static/js/main.08118460.chunk.js"
+  ]
+}
